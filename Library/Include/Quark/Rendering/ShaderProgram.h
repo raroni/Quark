@@ -16,6 +16,7 @@ namespace Quark {
         GLuint handle;
     public:
         ShaderProgram(GLuint handle);
+        void use() const;
     };
 }
 

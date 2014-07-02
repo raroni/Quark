@@ -18,4 +18,13 @@ namespace Quark {
         ProgramMap::value_type value(name, program);
         programs.insert(value);
     }
+    
+    const ShaderProgram& ShaderProgramRegistry::get(std::string name) {
+        auto iterator = programs.find(name);
+        if(iterator == programs.end()) {
+            throw Exception("Shader program not found.");
+        } else {
+            return iterator->second;
+        }
+    }
 }

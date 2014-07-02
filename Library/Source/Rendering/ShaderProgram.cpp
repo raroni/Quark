@@ -10,4 +10,8 @@
 
 namespace Quark {
     ShaderProgram::ShaderProgram(GLuint handle) : handle(handle) { }
+    
+    void ShaderProgram::use() const {
+        glUseProgram(handle);
+    }
 }
