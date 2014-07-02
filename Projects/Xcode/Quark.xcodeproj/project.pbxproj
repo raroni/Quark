@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A8C8C6F1963F88C005C664A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C8C6E1963F88C005C664A /* Foundation.framework */; };
+		3AB208E819642CA2004C625F /* Screen.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AB208E619642CA2004C625F /* Screen.mm */; };
 		3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5B1963FB9300A3A961 /* Game.cpp */; };
-		3AC7CF651963FBB000A3A961 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5F1963FB9300A3A961 /* Screen.cpp */; };
+		3AC7CF651963FBB000A3A961 /* CommonScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5F1963FB9300A3A961 /* CommonScreen.cpp */; };
 		3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5D1963FB9300A3A961 /* Touch.cpp */; };
 		3AC7CF671963FBB400A3A961 /* TouchSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */; };
 		3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF741963FC4300A3A961 /* TouchIDHelper.cpp */; };
@@ -35,15 +36,16 @@
 /* Begin PBXFileReference section */
 		3A8C8C6B1963F88C005C664A /* libQuark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuark.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8C8C6E1963F88C005C664A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3A8C8C7F1963F88C005C664A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AB208E619642CA2004C625F /* Screen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Screen.mm; sourceTree = "<group>"; };
+		3AB208E719642CA2004C625F /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
 		3AC7CF551963FB9300A3A961 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		3AC7CF571963FB9300A3A961 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
 		3AC7CF581963FB9300A3A961 /* TouchSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSurface.h; sourceTree = "<group>"; };
-		3AC7CF591963FB9300A3A961 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		3AC7CF591963FB9300A3A961 /* CommonScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonScreen.h; sourceTree = "<group>"; };
 		3AC7CF5B1963FB9300A3A961 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		3AC7CF5D1963FB9300A3A961 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Touch.cpp; sourceTree = "<group>"; };
 		3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchSurface.cpp; sourceTree = "<group>"; };
-		3AC7CF5F1963FB9300A3A961 /* Screen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
+		3AC7CF5F1963FB9300A3A961 /* CommonScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonScreen.cpp; sourceTree = "<group>"; };
 		3AC7CF6D1963FC4300A3A961 /* TouchIDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchIDHelper.h; sourceTree = "<group>"; };
 		3AC7CF6E1963FC4300A3A961 /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		3AC7CF6F1963FC4300A3A961 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				3A8C8C6E1963F88C005C664A /* Foundation.framework */,
-				3A8C8C7F1963F88C005C664A /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,7 +123,7 @@
 				3AC7CF7B1963FDD100A3A961 /* Exception.h */,
 				3AC7CF551963FB9300A3A961 /* Game.h */,
 				3AC7CF561963FB9300A3A961 /* Input */,
-				3AC7CF591963FB9300A3A961 /* Screen.h */,
+				3AC7CF591963FB9300A3A961 /* CommonScreen.h */,
 				3AC7CF7E1964037B00A3A961 /* Point.h */,
 				3AC7CF841964049F00A3A961 /* Resolution.h */,
 			);
@@ -145,7 +146,7 @@
 				3AC7CF831964049F00A3A961 /* Resolution.cpp */,
 				3AC7CF5B1963FB9300A3A961 /* Game.cpp */,
 				3AC7CF5C1963FB9300A3A961 /* Input */,
-				3AC7CF5F1963FB9300A3A961 /* Screen.cpp */,
+				3AC7CF5F1963FB9300A3A961 /* CommonScreen.cpp */,
 				3AC7CF7A1963FDD100A3A961 /* Exception.cpp */,
 			);
 			path = Source;
@@ -189,6 +190,7 @@
 		3AC7CF6B1963FC4300A3A961 /* Quark */ = {
 			isa = PBXGroup;
 			children = (
+				3AB208E719642CA2004C625F /* Screen.h */,
 				3AC7CF6C1963FC4300A3A961 /* iOS */,
 				3AC7CF701963FC4300A3A961 /* Rendering */,
 			);
@@ -216,6 +218,7 @@
 		3AC7CF721963FC4300A3A961 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3AB208E619642CA2004C625F /* Screen.mm */,
 				3AC7CF731963FC4300A3A961 /* iOS */,
 			);
 			path = Source;
@@ -285,13 +288,14 @@
 				3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */,
 				3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */,
 				3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */,
+				3AB208E819642CA2004C625F /* Screen.mm in Sources */,
 				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
 				3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */,
 				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
 				3AC7CF781963FC5800A3A961 /* View.mm in Sources */,
 				3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */,
 				3AC7CF671963FBB400A3A961 /* TouchSurface.cpp in Sources */,
-				3AC7CF651963FBB000A3A961 /* Screen.cpp in Sources */,
+				3AC7CF651963FBB000A3A961 /* CommonScreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

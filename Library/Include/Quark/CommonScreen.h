@@ -1,18 +1,18 @@
 //
-//  Screen.h
+//  CommonScreen.h
 //  Quark
 //
 //  Created by Rasmus Rønn Nielsen on 28/01/14.
 //  Copyright (c) 2014 Tickleworks. All rights reserved.
 //
 
-#ifndef __Quark__Screen__
-#define __Quark__Screen__
+#ifndef __Quark__CommonScreen__
+#define __Quark__CommonScreen__
 
 #include "Quark/Resolution.h"
 
 namespace Quark {
-    class Screen {
+    class CommonScreen {
         Resolution resolution;
     public:
         void setResolution(Resolution &resolution) {

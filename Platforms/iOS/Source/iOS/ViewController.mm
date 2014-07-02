@@ -24,6 +24,7 @@
     Quark::Screen& screen = game->getScreen();
     QuarkView *view = [[QuarkView alloc] initWithQuarkScreen:screen QuarkTouchSurface:touchSurface];
     self.view = view;
+    game->getScreen().setView(view);
 }
 
 - (void)run
