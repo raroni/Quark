@@ -21,7 +21,6 @@ typedef void *QuarkViewPointer;
 
 namespace Quark {
     class Screen : public CommonScreen {
-    private:
         QuarkViewPointer view;
     public:
         void setView(QuarkViewPointer view);
