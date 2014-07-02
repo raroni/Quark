@@ -21,10 +21,9 @@
 - (void)loadView
 {
     Quark::TouchSurface& touchSurface = game->getTouchSurface();
-    Quark::Screen& screen = game->getScreen();
-    QuarkView *view = [[QuarkView alloc] initWithQuarkScreen:screen QuarkTouchSurface:touchSurface];
-    self.view = view;
-    game->getScreen().setView(view);
+    Quark::Screen &screen = game->getScreen();
+    self.view = [[QuarkView alloc] initWithQuarkScreen:screen QuarkTouchSurface:touchSurface];
+    game->getScreen().setView((__bridge void*)self.view);
 }
 
 - (void)run

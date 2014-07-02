@@ -11,19 +11,11 @@
 
 #include "Quark/CommonScreen.h"
 
-#ifdef __OBJC__
-@class QuarkView;
-typedef QuarkView *QuarkViewPointer;
-#else
-typedef void *QuarkViewPointer;
-#endif
-
-
 namespace Quark {
     class Screen : public CommonScreen {
-        QuarkViewPointer view;
+        void *view;
     public:
-        void setView(QuarkViewPointer view);
+        void setView(void *view);
         void present();
     };
 }

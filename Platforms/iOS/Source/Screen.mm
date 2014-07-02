@@ -10,11 +10,11 @@
 #include "Quark/iOS/View.h"
 
 namespace Quark {
-    void Screen::setView(QuarkViewPointer view) {
+    void Screen::setView(void *view) {
         this->view = view;
     }
     
     void Screen::present() {
-        [view present];
+        [((__bridge QuarkView*)view) present];
     }
 }
