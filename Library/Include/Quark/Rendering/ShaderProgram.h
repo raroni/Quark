@@ -9,6 +9,7 @@
 #ifndef __Quark__ShaderProgram__
 #define __Quark__ShaderProgram__
 
+#include <string>
 #include "Quark/Rendering/OpenGL.h"
 
 namespace Quark {
@@ -17,6 +18,7 @@ namespace Quark {
     public:
         ShaderProgram(GLuint handle);
         void use() const;
+        GLint getAttributeHandle(std::string name) const;
     };
 }
 

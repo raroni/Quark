@@ -14,4 +14,9 @@ namespace Quark {
     void ShaderProgram::use() const {
         glUseProgram(handle);
     }
+    
+    GLint ShaderProgram::getAttributeHandle(std::string name) const {
+        auto cName = name.c_str();
+        return glGetAttribLocation(handle, cName);
+    }
 }
