@@ -7,3 +7,13 @@
 //
 
 #include "Quark/CommonScreen.h"
+
+namespace Quark {
+    void CommonScreen::setResolution(Resolution &resolution) {
+        this->resolution = resolution;
+    }
+    
+    const Resolution& CommonScreen::getResolution() const {
+        return resolution;
+    }
+}

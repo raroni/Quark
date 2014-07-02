@@ -15,9 +15,8 @@ namespace Quark {
     class CommonScreen {
         Resolution resolution;
     public:
-        void setResolution(Resolution &resolution) {
-            this->resolution = resolution;
-        }
+        void setResolution(Resolution &resolution);
+        const Resolution& getResolution() const;
     };
 }
 
