@@ -16,4 +16,8 @@ namespace Quark {
     TouchSurface& Game::getTouchSurface() {
         return touchSurface;
     }
+    
+    ShaderProgramRegistry& Game::getShaderProgramRegistry() {
+        return shaderProgramRegistry;
+    }
 }

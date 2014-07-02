@@ -11,16 +11,19 @@
 
 #include "Quark/Screen.h"
 #include "Quark/Input/TouchSurface.h"
+#include "Quark/Rendering/ShaderProgramRegistry.h"
 
 namespace Quark {
     class Game {
         Screen screen;
         TouchSurface touchSurface;
+        ShaderProgramRegistry shaderProgramRegistry;
     public:
         virtual void update(int timeDelta) = 0;
         virtual void initialize() { }
         Screen& getScreen();
         TouchSurface& getTouchSurface();
+        ShaderProgramRegistry& getShaderProgramRegistry();
         virtual ~Game() { }
     };
 }

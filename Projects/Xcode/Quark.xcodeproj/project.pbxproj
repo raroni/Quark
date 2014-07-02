@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7B84B4196465D0003ED243 /* ShaderProgramRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */; };
+		3A7B84B7196465D6003ED243 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */; };
+		3A7B84BA196465ED003ED243 /* ShaderProgramSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */; };
 		3A8C8C6F1963F88C005C664A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C8C6E1963F88C005C664A /* Foundation.framework */; };
 		3AB208E819642CA2004C625F /* Screen.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AB208E619642CA2004C625F /* Screen.mm */; };
 		3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5B1963FB9300A3A961 /* Game.cpp */; };
@@ -34,6 +37,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgramRegistry.cpp; sourceTree = "<group>"; };
+		3A7B84B3196465D0003ED243 /* ShaderProgramRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgramRegistry.h; sourceTree = "<group>"; };
+		3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
+		3A7B84B6196465D6003ED243 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
+		3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgramSetup.cpp; sourceTree = "<group>"; };
+		3A7B84B9196465ED003ED243 /* ShaderProgramSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgramSetup.h; sourceTree = "<group>"; };
 		3A8C8C6B1963F88C005C664A /* libQuark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuark.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8C8C6E1963F88C005C664A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3AB208E619642CA2004C625F /* Screen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Screen.mm; sourceTree = "<group>"; };
@@ -73,6 +82,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A7B84B019646408003ED243 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				3A7B84B3196465D0003ED243 /* ShaderProgramRegistry.h */,
+				3A7B84B9196465ED003ED243 /* ShaderProgramSetup.h */,
+				3A7B84B6196465D6003ED243 /* ShaderProgram.h */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		3A7B84B119646414003ED243 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */,
+				3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */,
+				3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
 		3A8C8C621963F88C005C664A = {
 			isa = PBXGroup;
 			children = (
@@ -120,9 +149,10 @@
 		3AC7CF541963FB9300A3A961 /* Quark */ = {
 			isa = PBXGroup;
 			children = (
+				3AC7CF561963FB9300A3A961 /* Input */,
+				3A7B84B019646408003ED243 /* Rendering */,
 				3AC7CF7B1963FDD100A3A961 /* Exception.h */,
 				3AC7CF551963FB9300A3A961 /* Game.h */,
-				3AC7CF561963FB9300A3A961 /* Input */,
 				3AC7CF591963FB9300A3A961 /* CommonScreen.h */,
 				3AC7CF7E1964037B00A3A961 /* Point.h */,
 				3AC7CF841964049F00A3A961 /* Resolution.h */,
@@ -142,10 +172,11 @@
 		3AC7CF5A1963FB9300A3A961 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3AC7CF5C1963FB9300A3A961 /* Input */,
+				3A7B84B119646414003ED243 /* Rendering */,
 				3AC7CF7D1964037B00A3A961 /* Point.cpp */,
 				3AC7CF831964049F00A3A961 /* Resolution.cpp */,
 				3AC7CF5B1963FB9300A3A961 /* Game.cpp */,
-				3AC7CF5C1963FB9300A3A961 /* Input */,
 				3AC7CF5F1963FB9300A3A961 /* CommonScreen.cpp */,
 				3AC7CF7A1963FDD100A3A961 /* Exception.cpp */,
 			);
@@ -287,11 +318,14 @@
 			files = (
 				3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */,
 				3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */,
+				3A7B84B4196465D0003ED243 /* ShaderProgramRegistry.cpp in Sources */,
+				3A7B84B7196465D6003ED243 /* ShaderProgram.cpp in Sources */,
 				3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */,
 				3AB208E819642CA2004C625F /* Screen.mm in Sources */,
 				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
 				3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */,
 				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
+				3A7B84BA196465ED003ED243 /* ShaderProgramSetup.cpp in Sources */,
 				3AC7CF781963FC5800A3A961 /* View.mm in Sources */,
 				3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */,
 				3AC7CF671963FBB400A3A961 /* TouchSurface.cpp in Sources */,
