@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A8C8C6F1963F88C005C664A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C8C6E1963F88C005C664A /* Foundation.framework */; };
+		3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5B1963FB9300A3A961 /* Game.cpp */; };
+		3AC7CF651963FBB000A3A961 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5F1963FB9300A3A961 /* Screen.cpp */; };
+		3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5D1963FB9300A3A961 /* Touch.cpp */; };
+		3AC7CF671963FBB400A3A961 /* TouchSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */; };
+		3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF741963FC4300A3A961 /* TouchIDHelper.cpp */; };
+		3AC7CF781963FC5800A3A961 /* View.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF751963FC4300A3A961 /* View.mm */; };
+		3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF761963FC4300A3A961 /* ViewController.mm */; };
+		3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7A1963FDD100A3A961 /* Exception.cpp */; };
+		3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7D1964037B00A3A961 /* Point.cpp */; };
+		3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF831964049F00A3A961 /* Resolution.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A8C8C691963F88C005C664A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A8C8C6B1963F88C005C664A /* libQuark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuark.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8C8C6E1963F88C005C664A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A8C8C7F1963F88C005C664A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AC7CF551963FB9300A3A961 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		3AC7CF571963FB9300A3A961 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
+		3AC7CF581963FB9300A3A961 /* TouchSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSurface.h; sourceTree = "<group>"; };
+		3AC7CF591963FB9300A3A961 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
+		3AC7CF5B1963FB9300A3A961 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		3AC7CF5D1963FB9300A3A961 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Touch.cpp; sourceTree = "<group>"; };
+		3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchSurface.cpp; sourceTree = "<group>"; };
+		3AC7CF5F1963FB9300A3A961 /* Screen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Screen.cpp; sourceTree = "<group>"; };
+		3AC7CF6D1963FC4300A3A961 /* TouchIDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchIDHelper.h; sourceTree = "<group>"; };
+		3AC7CF6E1963FC4300A3A961 /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		3AC7CF6F1963FC4300A3A961 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3AC7CF711963FC4300A3A961 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
+		3AC7CF741963FC4300A3A961 /* TouchIDHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TouchIDHelper.cpp; sourceTree = "<group>"; };
+		3AC7CF751963FC4300A3A961 /* View.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = View.mm; sourceTree = "<group>"; };
+		3AC7CF761963FC4300A3A961 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		3AC7CF7A1963FDD100A3A961 /* Exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
+		3AC7CF7B1963FDD100A3A961 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		3AC7CF7D1964037B00A3A961 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		3AC7CF7E1964037B00A3A961 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
+		3AC7CF831964049F00A3A961 /* Resolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
+		3AC7CF841964049F00A3A961 /* Resolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A8C8C681963F88C005C664A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A8C8C6F1963F88C005C664A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A8C8C621963F88C005C664A = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF521963FB9300A3A961 /* Library */,
+				3AC7CF681963FC4300A3A961 /* Platforms */,
+				3A8C8C6D1963F88C005C664A /* Frameworks */,
+				3A8C8C6C1963F88C005C664A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A8C8C6C1963F88C005C664A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8C6B1963F88C005C664A /* libQuark.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A8C8C6D1963F88C005C664A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8C6E1963F88C005C664A /* Foundation.framework */,
+				3A8C8C7F1963F88C005C664A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AC7CF521963FB9300A3A961 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF531963FB9300A3A961 /* Include */,
+				3AC7CF5A1963FB9300A3A961 /* Source */,
+			);
+			name = Library;
+			path = ../../Library;
+			sourceTree = "<group>";
+		};
+		3AC7CF531963FB9300A3A961 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF541963FB9300A3A961 /* Quark */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		3AC7CF541963FB9300A3A961 /* Quark */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF7B1963FDD100A3A961 /* Exception.h */,
+				3AC7CF551963FB9300A3A961 /* Game.h */,
+				3AC7CF561963FB9300A3A961 /* Input */,
+				3AC7CF591963FB9300A3A961 /* Screen.h */,
+				3AC7CF7E1964037B00A3A961 /* Point.h */,
+				3AC7CF841964049F00A3A961 /* Resolution.h */,
+			);
+			path = Quark;
+			sourceTree = "<group>";
+		};
+		3AC7CF561963FB9300A3A961 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF571963FB9300A3A961 /* Touch.h */,
+				3AC7CF581963FB9300A3A961 /* TouchSurface.h */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		3AC7CF5A1963FB9300A3A961 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF7D1964037B00A3A961 /* Point.cpp */,
+				3AC7CF831964049F00A3A961 /* Resolution.cpp */,
+				3AC7CF5B1963FB9300A3A961 /* Game.cpp */,
+				3AC7CF5C1963FB9300A3A961 /* Input */,
+				3AC7CF5F1963FB9300A3A961 /* Screen.cpp */,
+				3AC7CF7A1963FDD100A3A961 /* Exception.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3AC7CF5C1963FB9300A3A961 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF5D1963FB9300A3A961 /* Touch.cpp */,
+				3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		3AC7CF681963FC4300A3A961 /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF691963FC4300A3A961 /* iOS */,
+			);
+			name = Platforms;
+			path = ../../Platforms;
+			sourceTree = "<group>";
+		};
+		3AC7CF691963FC4300A3A961 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF6A1963FC4300A3A961 /* Include */,
+				3AC7CF721963FC4300A3A961 /* Source */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3AC7CF6A1963FC4300A3A961 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF6B1963FC4300A3A961 /* Quark */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		3AC7CF6B1963FC4300A3A961 /* Quark */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF6C1963FC4300A3A961 /* iOS */,
+				3AC7CF701963FC4300A3A961 /* Rendering */,
+			);
+			path = Quark;
+			sourceTree = "<group>";
+		};
+		3AC7CF6C1963FC4300A3A961 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF6D1963FC4300A3A961 /* TouchIDHelper.h */,
+				3AC7CF6E1963FC4300A3A961 /* View.h */,
+				3AC7CF6F1963FC4300A3A961 /* ViewController.h */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3AC7CF701963FC4300A3A961 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF711963FC4300A3A961 /* OpenGL.h */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		3AC7CF721963FC4300A3A961 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF731963FC4300A3A961 /* iOS */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3AC7CF731963FC4300A3A961 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CF741963FC4300A3A961 /* TouchIDHelper.cpp */,
+				3AC7CF751963FC4300A3A961 /* View.mm */,
+				3AC7CF761963FC4300A3A961 /* ViewController.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A8C8C6A1963F88C005C664A /* Quark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A8C8C8E1963F88C005C664A /* Build configuration list for PBXNativeTarget "Quark" */;
+			buildPhases = (
+				3A8C8C671963F88C005C664A /* Sources */,
+				3A8C8C681963F88C005C664A /* Frameworks */,
+				3A8C8C691963F88C005C664A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quark;
+			productName = Wingman;
+			productReference = 3A8C8C6B1963F88C005C664A /* libQuark.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A8C8C631963F88C005C664A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Tickleworks;
+			};
+			buildConfigurationList = 3A8C8C661963F88C005C664A /* Build configuration list for PBXProject "Quark" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A8C8C621963F88C005C664A;
+			productRefGroup = 3A8C8C6C1963F88C005C664A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A8C8C6A1963F88C005C664A /* Quark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A8C8C671963F88C005C664A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */,
+				3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */,
+				3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */,
+				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
+				3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */,
+				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
+				3AC7CF781963FC5800A3A961 /* View.mm in Sources */,
+				3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */,
+				3AC7CF671963FBB400A3A961 /* TouchSurface.cpp in Sources */,
+				3AC7CF651963FBB000A3A961 /* Screen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A8C8C8C1963F88C005C664A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+			};
+			name = Debug;
+		};
+		3A8C8C8D1963F88C005C664A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A8C8C8F1963F88C005C664A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Quark.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../../Platforms/iOS/Prefix.pch;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+			};
+			name = Debug;
+		};
+		3A8C8C901963F88C005C664A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Quark.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../../Platforms/iOS/Prefix.pch;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A8C8C661963F88C005C664A /* Build configuration list for PBXProject "Quark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A8C8C8C1963F88C005C664A /* Debug */,
+				3A8C8C8D1963F88C005C664A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A8C8C8E1963F88C005C664A /* Build configuration list for PBXNativeTarget "Quark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A8C8C8F1963F88C005C664A /* Debug */,
+				3A8C8C901963F88C005C664A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A8C8C631963F88C005C664A /* Project object */;
+}
