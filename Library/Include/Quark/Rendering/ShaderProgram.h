@@ -12,6 +12,10 @@
 #include <string>
 #include "Quark/Rendering/OpenGL.h"
 
+namespace Zep {
+    class Matrix4;
+}
+
 namespace Quark {
     class ShaderProgram {
         GLuint handle;
@@ -19,6 +23,8 @@ namespace Quark {
         ShaderProgram(GLuint handle);
         void use() const;
         GLint getAttributeHandle(std::string name) const;
+        GLint getUniformHandle(std::string name) const;
+        static void setUniform(GLint uniformHandle, Zep::Matrix4 matrix);
     };
 }
 

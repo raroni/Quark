@@ -415,7 +415,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include /Users/rasmus/projects/Zep/Library/Include";
 			};
 			name = Debug;
 		};
@@ -428,7 +428,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include";
+				USER_HEADER_SEARCH_PATHS = "../../Library/Include ../../Platforms/iOS/Include /Users/rasmus/projects/Zep/Library/Include";
 			};
 			name = Release;
 		};
