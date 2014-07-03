@@ -22,6 +22,7 @@
 		3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7A1963FDD100A3A961 /* Exception.cpp */; };
 		3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7D1964037B00A3A961 /* Point.cpp */; };
 		3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF831964049F00A3A961 /* Resolution.cpp */; };
+		3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,8 @@
 		3AC7CF7E1964037B00A3A961 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
 		3AC7CF831964049F00A3A961 /* Resolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
 		3AC7CF841964049F00A3A961 /* Resolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
+		3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectionFactory.cpp; sourceTree = "<group>"; };
+		3AD4F46E196574C4009C80FF /* ProjectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 			children = (
 				3A7B84B3196465D0003ED243 /* ShaderProgramRegistry.h */,
 				3A7B84B9196465ED003ED243 /* ShaderProgramSetup.h */,
+				3AD4F46E196574C4009C80FF /* ProjectionFactory.h */,
 				3A7B84B6196465D6003ED243 /* ShaderProgram.h */,
 			);
 			path = Rendering;
@@ -98,6 +102,7 @@
 				3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */,
 				3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */,
 				3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */,
+				3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */,
 			);
 			path = Rendering;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				3AB208E819642CA2004C625F /* Screen.mm in Sources */,
 				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
 				3AC7CF7F1964037B00A3A961 /* Point.cpp in Sources */,
+				3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */,
 				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
 				3A7B84BA196465ED003ED243 /* ShaderProgramSetup.cpp in Sources */,
 				3AC7CF781963FC5800A3A961 /* View.mm in Sources */,
