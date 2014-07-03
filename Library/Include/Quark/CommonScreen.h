@@ -17,6 +17,7 @@ namespace Quark {
     public:
         void setResolution(Resolution &resolution);
         const Resolution& getResolution() const;
+        float getAspectRatio() const;
     };
 }
 

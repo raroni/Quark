@@ -16,4 +16,8 @@ namespace Quark {
     const Resolution& CommonScreen::getResolution() const {
         return resolution;
     }
+    
+    float CommonScreen::getAspectRatio() const {
+        return static_cast<float>(resolution.width) / static_cast<float>(resolution.height);
+    }
 }
