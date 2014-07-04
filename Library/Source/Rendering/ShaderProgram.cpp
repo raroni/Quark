@@ -7,6 +7,7 @@
 //
 
 #include "Zep/Math/Matrix4.h"
+#include "Zep/Math/Vector3.h"
 #include "ShaderProgram.h"
 
 namespace Quark {
@@ -28,5 +29,9 @@ namespace Quark {
     
     void ShaderProgram::setUniform(GLint handle, Zep::Matrix4 matrix) {
         glUniformMatrix4fv(handle, 1, GL_FALSE, matrix.components);
+    }
+    
+    void ShaderProgram::setUniform(GLint handle, Zep::Vector3 vector) {
+        glUniform3fv(handle, 1, vector.components);
     }
 }

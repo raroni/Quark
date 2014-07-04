@@ -14,6 +14,7 @@
 
 namespace Zep {
     class Matrix4;
+    class Vector3;
 }
 
 namespace Quark {
@@ -25,6 +26,7 @@ namespace Quark {
         GLint getAttributeHandle(std::string name) const;
         GLint getUniformHandle(std::string name) const;
         static void setUniform(GLint uniformHandle, Zep::Matrix4 matrix);
+        static void setUniform(GLint uniformHandle, Zep::Vector3 vector);
     };
 }
 
