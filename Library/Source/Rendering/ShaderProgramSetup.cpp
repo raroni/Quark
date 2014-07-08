@@ -36,9 +36,12 @@ namespace Quark {
             GLchar *log = new GLchar[logLength+1];
             glGetShaderInfoLog(shaderHandle, logLength, NULL, log);
             
+            std::string errorMessage = "Compilation error in shader: ";
+            errorMessage += log;
+            
             delete[] log;
             
-            throw Exception("Compilation error in shader.");
+            throw Exception(errorMessage);
         }
         
         return shaderHandle;
