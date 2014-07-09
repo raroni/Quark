@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Tickleworks. All rights reserved.
 //
 
+#include "Zep/Geometry/Point2D.h"
 #include "Quark/Rendering/OpenGL.h"
-#include "Quark/Point.h"
 #include "Quark/Resolution.h"
 #include "Quark/Screen.h"
 #include "Quark/Input/TouchSurface.h"
@@ -16,7 +16,7 @@
 
 @interface QuarkView()
 - (float)pointsToPixels:(float)points;
-- (Quark::Point)UITouchToQuarkPoint:(UITouch*)touch;
+- (Zep::Point2D)UITouchToQuarkPoint:(UITouch*)touch;
 @end
 
 @implementation QuarkView
@@ -89,7 +89,7 @@
 {
     for(UITouch *touch in touches) {
         int id = touchIDHelper->createID((intptr_t)touch);
-        Quark::Point position = [self UITouchToQuarkPoint:touch];
+        Zep::Point2D position = [self UITouchToQuarkPoint:touch];
         QuarkTouchSurface->registerTouch(id, position);
     }
 }
@@ -98,7 +98,7 @@
 {
     for(UITouch *touch in touches) {
         int id = touchIDHelper->getID(intptr_t(touch));
-        Quark::Point position = [self UITouchToQuarkPoint:touch];
+        Zep::Point2D position = [self UITouchToQuarkPoint:touch];
         QuarkTouchSurface->updateTouch(id, position);
     }
 }
@@ -110,7 +110,7 @@
         int id = touchIDHelper->getID(touchAddress);
         touchIDHelper->destroyID(touchAddress);
         
-        Quark::Point position = [self UITouchToQuarkPoint:touch];
+        Zep::Point2D position = [self UITouchToQuarkPoint:touch];
         QuarkTouchSurface->endTouch(id, position);
     }
 }
@@ -122,16 +122,16 @@
         int id = touchIDHelper->getID(touchAddress);
         touchIDHelper->destroyID(touchAddress);
         
-        Quark::Point position = [self UITouchToQuarkPoint:touch];
+        Zep::Point2D position = [self UITouchToQuarkPoint:touch];
         QuarkTouchSurface->cancelTouch(id, position);
     }
 }
 
-- (Quark::Point)UITouchToQuarkPoint:(UITouch*)touch {
+- (Zep::Point2D)UITouchToQuarkPoint:(UITouch*)touch {
     CGPoint iOSpoint = [touch locationInView:self];
-    Quark::Point position;
-    position.x = (iOSpoint.x/self.layer.bounds.size.width)*2-1;
-    position.y = (iOSpoint.y/self.layer.bounds.size.height)*-2+1;
+    Zep::Point2D position;
+    position[0] = (iOSpoint.x/self.layer.bounds.size.width)*2-1;
+    position[1] = (iOSpoint.y/self.layer.bounds.size.height)*-2+1;
     return position;
 }
 

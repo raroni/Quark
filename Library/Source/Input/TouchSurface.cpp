@@ -7,7 +7,6 @@
 //
 
 #include "TouchSurface.h"
-#include "Quark/Point.h"
 #include "Touch.h"
 
 namespace Quark {
@@ -17,7 +16,7 @@ namespace Quark {
         newTouches.clear();
     }
     
-    void TouchSurface::registerTouch(int id, Point position) {
+    void TouchSurface::registerTouch(int id, Zep::Point2D position) {
         Touch* touch = new Touch(id, position);
         touches.push_back(touch);
         
@@ -26,21 +25,21 @@ namespace Quark {
         newTouches.push_back(touch);
     }
     
-    void TouchSurface::updateTouch(int id, Point position) {
+    void TouchSurface::updateTouch(int id, Zep::Point2D position) {
         Touch* touch = map.find(id)->second;
         touch->setPosition(position);
         touch->setStatus(Touch::Moved);
         justUpdatedTouches.push_back(touch);
     }
     
-    void TouchSurface::endTouch(int id, Point position) {
+    void TouchSurface::endTouch(int id, Zep::Point2D position) {
         Touch* touch = map.find(id)->second;
         touch->setPosition(position);
         touch->setStatus(Touch::Ended);
         endedTouches.push_back(touch);
     }
     
-    void TouchSurface::cancelTouch(int id, Point position) {
+    void TouchSurface::cancelTouch(int id, Zep::Point2D position) {
         Touch* touch = map.find(id)->second;
         touch->setPosition(position);
         touch->setStatus(Touch::Cancelled);

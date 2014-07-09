@@ -9,11 +9,11 @@
 #ifndef __Quark__Touch__
 #define __Quark__Touch__
 
-#include "Quark/Point.h"
+#include "Zep/Geometry/Point2D.h"
 
 namespace Quark {
     class Touch {
-        Point position;
+        Zep::Point2D position;
         int id;
     public:
         enum Status {
@@ -23,11 +23,11 @@ namespace Quark {
             Ended,
             Cancelled
         };
-        Touch(int id, Point position);
+        Touch(int id, Zep::Point2D position);
         void setStatus(Status status);
         Status getStatus();
-        void setPosition(Point position);
-        Point getPosition();
+        void setPosition(Zep::Point2D position);
+        Zep::Point2D getPosition();
         int getID();
     private:
         Status status = Began;
