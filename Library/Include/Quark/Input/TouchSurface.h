@@ -34,6 +34,7 @@ namespace Quark {
         iterator begin() { return touches.begin(); };
         iterator end() { return touches.end(); };
         void cleanUp();
+        Touch* getTouch(int index);
         void registerTouch(int id, Zep::Point2D position);
         void updateTouch(int id, Zep::Point2D position);
         void endTouch(int id, Zep::Point2D position);

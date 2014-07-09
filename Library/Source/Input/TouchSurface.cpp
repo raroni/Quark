@@ -69,6 +69,10 @@ namespace Quark {
         }
     }
     
+    Touch* TouchSurface::getTouch(int index) {
+        return map[index];
+    }
+    
     std::vector<Touch*> TouchSurface::getNewTouches() {
         return newTouches;
     }
