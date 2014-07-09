@@ -130,8 +130,8 @@
 - (Quark::Point)UITouchToQuarkPoint:(UITouch*)touch {
     CGPoint iOSpoint = [touch locationInView:self];
     Quark::Point position;
-    position.x = [self pointsToPixels:iOSpoint.x/self.layer.bounds.size.width]*2-1;
-    position.y = [self pointsToPixels:iOSpoint.y/self.layer.bounds.size.height]*-2+1;
+    position.x = (iOSpoint.x/self.layer.bounds.size.width)*2-1;
+    position.y = (iOSpoint.y/self.layer.bounds.size.height)*-2+1;
     return position;
 }
 
