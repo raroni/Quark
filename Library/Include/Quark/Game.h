@@ -19,7 +19,7 @@ namespace Quark {
         TouchSurface touchSurface;
         ShaderProgramRegistry shaderProgramRegistry;
     public:
-        virtual void update(int timeDelta) = 0;
+        virtual void update(float timeDelta) = 0;
         virtual void initialize() { }
         Screen& getScreen();
         TouchSurface& getTouchSurface();
