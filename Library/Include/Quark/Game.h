@@ -14,17 +14,16 @@
 #include "Quark/Rendering/ShaderProgramRegistry.h"
 
 namespace Quark {
+    class System;
+    
     class Game {
-        Screen screen;
-        TouchSurface touchSurface;
-        ShaderProgramRegistry shaderProgramRegistry;
+    protected:
+        System& system;
     public:
+        Game(System &system);
         virtual void update(float timeDelta) = 0;
-        virtual void initialize() { }
-        Screen& getScreen();
-        TouchSurface& getTouchSurface();
-        ShaderProgramRegistry& getShaderProgramRegistry();
-        virtual ~Game() { }
+        virtual void initialize();
+        virtual ~Game();
     };
 }
 

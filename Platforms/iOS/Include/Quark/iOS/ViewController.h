@@ -10,12 +10,14 @@
 
 namespace Quark {
     class Game;
+    class System;
 }
 
 @interface QuarkViewController : UIViewController
 {
     Quark::Game* game;
+    Quark::System* system;
 }
-- (id)initWithGame:(Quark::Game*)aGame;
+- (id)initWithGame:(Quark::Game*)aGame system:(Quark::System*)aSystem;
 - (void)run;
 @end

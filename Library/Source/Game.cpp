@@ -9,15 +9,9 @@
 #include "Quark/Game.h"
 
 namespace Quark {
-    Screen& Game::getScreen() {
-        return screen;
-    }
+    Game::Game(System &system) : system(system) { }
     
-    TouchSurface& Game::getTouchSurface() {
-        return touchSurface;
-    }
+    void Game::initialize() { }
     
-    ShaderProgramRegistry& Game::getShaderProgramRegistry() {
-        return shaderProgramRegistry;
-    }
+    Game::~Game() { }
 }

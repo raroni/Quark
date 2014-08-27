@@ -6,24 +6,26 @@
 //  Copyright (c) 2014 Tickleworks. All rights reserved.
 //
 
-#include "Quark/Game.h"
+#import "Quark/Game.h"
+#import "Quark/System.h"
 #import "Quark/iOS/View.h"
 #import "Quark/iOS/ViewController.h"
 
 @implementation QuarkViewController
 
-- (id)initWithGame:(Quark::Game*)aGame
+- (id)initWithGame:(Quark::Game*)aGame system:(Quark::System*)aSystem
 {
     game = aGame;
+    system = aSystem;
     return [self initWithNibName:nil bundle:nil];
 }
 
 - (void)loadView
 {
-    Quark::TouchSurface& touchSurface = game->getTouchSurface();
-    Quark::Screen &screen = game->getScreen();
+    Quark::TouchSurface& touchSurface = system->getTouchSurface();
+    Quark::Screen &screen = system->getScreen();
     self.view = [[QuarkView alloc] initWithQuarkScreen:screen QuarkTouchSurface:touchSurface];
-    game->getScreen().setView((__bridge void*)self.view);
+    screen.setView((__bridge void*)self.view);
 }
 
 - (void)run

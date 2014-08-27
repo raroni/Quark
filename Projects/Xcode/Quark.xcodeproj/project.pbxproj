@@ -22,6 +22,7 @@
 		3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7A1963FDD100A3A961 /* Exception.cpp */; };
 		3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF831964049F00A3A961 /* Resolution.cpp */; };
 		3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */; };
+		3AF19D8619AE8246005BA0D5 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF19D8419AE8246005BA0D5 /* System.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,8 @@
 		3AC7CF841964049F00A3A961 /* Resolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
 		3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectionFactory.cpp; sourceTree = "<group>"; };
 		3AD4F46E196574C4009C80FF /* ProjectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionFactory.h; sourceTree = "<group>"; };
+		3AF19D8419AE8246005BA0D5 /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		3AF19D8519AE8246005BA0D5 /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 				3AC7CF551963FB9300A3A961 /* Game.h */,
 				3AC7CF591963FB9300A3A961 /* CommonScreen.h */,
 				3AC7CF841964049F00A3A961 /* Resolution.h */,
+				3AF19D8519AE8246005BA0D5 /* System.h */,
 			);
 			path = Quark;
 			sourceTree = "<group>";
@@ -176,6 +180,7 @@
 				3AC7CF5C1963FB9300A3A961 /* Input */,
 				3A7B84B119646414003ED243 /* Rendering */,
 				3AC7CF831964049F00A3A961 /* Resolution.cpp */,
+				3AF19D8419AE8246005BA0D5 /* System.cpp */,
 				3AC7CF5B1963FB9300A3A961 /* Game.cpp */,
 				3AC7CF5F1963FB9300A3A961 /* CommonScreen.cpp */,
 				3AC7CF7A1963FDD100A3A961 /* Exception.cpp */,
@@ -316,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF19D8619AE8246005BA0D5 /* System.cpp in Sources */,
 				3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */,
 				3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */,
 				3A7B84B4196465D0003ED243 /* ShaderProgramRegistry.cpp in Sources */,
