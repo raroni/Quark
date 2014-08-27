@@ -11,17 +11,17 @@
 
 #include "Quark/Input/TouchSurface.h"
 #include "Quark/Screen.h"
-#include "Zep/Events/EventManager.h"
+#include "Zep/Events/EventBus.h"
 
 namespace Quark {
     class System {
         TouchSurface touchSurface;
         Screen screen;
-        Zep::EventManager eventManager;
+        Zep::EventBus eventBus;
     public:
         TouchSurface& getTouchSurface();
         Screen& getScreen();
-        Zep::EventManager& getEventManager();
+        Zep::EventBus& getEventBus();
     };
 }
 

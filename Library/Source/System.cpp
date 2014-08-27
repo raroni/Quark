@@ -17,7 +17,7 @@ namespace Quark {
         return touchSurface;
     }
     
-    Zep::EventManager& System::getEventManager() {
-        return eventManager;
+    Zep::EventBus& System::getEventBus() {
+        return eventBus;
     }
 }
