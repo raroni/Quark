@@ -48,6 +48,7 @@
 -(void)dealloc
 {
     delete game;
+    delete system;
 }
 
 @end
