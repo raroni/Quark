@@ -17,7 +17,7 @@
 {
     game = aGame;
     system = aSystem;
-    return [self initWithNibName:nil bundle:nil];
+    return [self init];
 }
 
 - (void)loadView
