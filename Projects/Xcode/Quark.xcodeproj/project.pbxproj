@@ -22,6 +22,8 @@
 		3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF7A1963FDD100A3A961 /* Exception.cpp */; };
 		3AC7CF851964049F00A3A961 /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF831964049F00A3A961 /* Resolution.cpp */; };
 		3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */; };
+		3AD6498E19B31CFF00803505 /* TouchStartEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6498C19B31CFF00803505 /* TouchStartEvent.cpp */; };
+		3AD6499119B31D0700803505 /* TouchEndEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6498F19B31D0700803505 /* TouchEndEvent.cpp */; };
 		3AF19D8619AE8246005BA0D5 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF19D8419AE8246005BA0D5 /* System.cpp */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,10 @@
 		3AC7CF841964049F00A3A961 /* Resolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
 		3AD4F46D196574C4009C80FF /* ProjectionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectionFactory.cpp; sourceTree = "<group>"; };
 		3AD4F46E196574C4009C80FF /* ProjectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionFactory.h; sourceTree = "<group>"; };
+		3AD6498C19B31CFF00803505 /* TouchStartEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchStartEvent.cpp; sourceTree = "<group>"; };
+		3AD6498D19B31CFF00803505 /* TouchStartEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchStartEvent.h; sourceTree = "<group>"; };
+		3AD6498F19B31D0700803505 /* TouchEndEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchEndEvent.cpp; sourceTree = "<group>"; };
+		3AD6499019B31D0700803505 /* TouchEndEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchEndEvent.h; sourceTree = "<group>"; };
 		3AF19D8419AE8246005BA0D5 /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
 		3AF19D8519AE8246005BA0D5 /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +174,8 @@
 		3AC7CF561963FB9300A3A961 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				3AD6498D19B31CFF00803505 /* TouchStartEvent.h */,
+				3AD6499019B31D0700803505 /* TouchEndEvent.h */,
 				3AC7CF571963FB9300A3A961 /* Touch.h */,
 				3AC7CF581963FB9300A3A961 /* TouchSurface.h */,
 			);
@@ -193,6 +201,8 @@
 			children = (
 				3AC7CF5D1963FB9300A3A961 /* Touch.cpp */,
 				3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */,
+				3AD6498C19B31CFF00803505 /* TouchStartEvent.cpp */,
+				3AD6498F19B31D0700803505 /* TouchEndEvent.cpp */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -328,9 +338,11 @@
 				3A7B84B7196465D6003ED243 /* ShaderProgram.cpp in Sources */,
 				3AC7CF661963FBB300A3A961 /* Touch.cpp in Sources */,
 				3AB208E819642CA2004C625F /* Screen.mm in Sources */,
+				3AD6498E19B31CFF00803505 /* TouchStartEvent.cpp in Sources */,
 				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
 				3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */,
 				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
+				3AD6499119B31D0700803505 /* TouchEndEvent.cpp in Sources */,
 				3A7B84BA196465ED003ED243 /* ShaderProgramSetup.cpp in Sources */,
 				3AC7CF781963FC5800A3A961 /* View.mm in Sources */,
 				3AC7CF7C1963FDD100A3A961 /* Exception.cpp in Sources */,
@@ -366,7 +378,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -399,6 +411,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

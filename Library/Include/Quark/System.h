@@ -15,10 +15,11 @@
 
 namespace Quark {
     class System {
+        Zep::EventBus eventBus;
         TouchSurface touchSurface;
         Screen screen;
-        Zep::EventBus eventBus;
     public:
+        System();
         TouchSurface& getTouchSurface();
         Screen& getScreen();
         Zep::EventBus& getEventBus();

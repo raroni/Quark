@@ -14,6 +14,7 @@
 
 namespace Zep {
     class Point2D;
+    class EventBus;
 }
 
 namespace Quark {
@@ -27,14 +28,17 @@ namespace Quark {
         std::vector<Touch*> justUpdatedTouches;
         std::vector<Touch*> endedTouches;
         std::vector<Touch*> newTouches;
+        Zep::EventBus &eventBus;
         void updateStationary();
         void removeEnded();
     public:
+        TouchSurface(Zep::EventBus &eventBus);
+        Zep::EventBus& getEventBus();
         typedef std::vector<Touch*>::iterator iterator;
         iterator begin() { return touches.begin(); };
         iterator end() { return touches.end(); };
         void cleanUp();
-        Touch* getTouch(int index);
+        Touch& getTouch(int index);
         void registerTouch(int id, Zep::Point2D position);
         void updateTouch(int id, Zep::Point2D position);
         void endTouch(int id, Zep::Point2D position);

@@ -9,6 +9,8 @@
 #include "Quark/System.h"
 
 namespace Quark {
+    System::System() : touchSurface(eventBus) { }
+    
     Screen& System::getScreen() {
         return screen;
     }

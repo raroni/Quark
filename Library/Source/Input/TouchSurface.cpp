@@ -6,10 +6,15 @@
 //  Copyright (c) 2014 Tickleworks. All rights reserved.
 //
 
-#include "TouchSurface.h"
-#include "Touch.h"
+#include "Zep/Events/EventBus.h"
+#include "Quark/Input/Touch.h"
+#include "Quark/Input/TouchStartEvent.h"
+#include "Quark/Input/TouchEndEvent.h"
+#include "Quark/Input/TouchSurface.h"
 
 namespace Quark {
+    TouchSurface::TouchSurface(Zep::EventBus &eventBus) : eventBus(eventBus) { }
+    
     void TouchSurface::cleanUp() {
         updateStationary();
         removeEnded();
@@ -23,10 +28,17 @@ namespace Quark {
         map.insert(std::map<int, Touch*>::value_type(id, touch));
         justUpdatedTouches.push_back(touch);
         newTouches.push_back(touch);
+        
+        TouchStartEvent event(id);
+        eventBus.emit(event);
+    }
+    
+    Zep::EventBus& TouchSurface::getEventBus() {
+        return eventBus;
     }
     
     void TouchSurface::updateTouch(int id, Zep::Point2D position) {
-        Touch* touch = map.find(id)->second;
+        Touch *touch = map.find(id)->second;
         touch->setPosition(position);
         touch->setStatus(Touch::Moved);
         justUpdatedTouches.push_back(touch);
@@ -37,6 +49,9 @@ namespace Quark {
         touch->setPosition(position);
         touch->setStatus(Touch::Ended);
         endedTouches.push_back(touch);
+        
+        TouchEndEvent event(id);
+        eventBus.emit(event);
     }
     
     void TouchSurface::cancelTouch(int id, Zep::Point2D position) {
@@ -69,8 +84,8 @@ namespace Quark {
         }
     }
     
-    Touch* TouchSurface::getTouch(int index) {
-        return map[index];
+    Touch& TouchSurface::getTouch(int index) {
+        return *map[index];
     }
     
     std::vector<Touch*> TouchSurface::getNewTouches() {
