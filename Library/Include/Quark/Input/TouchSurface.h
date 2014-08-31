@@ -30,7 +30,7 @@ namespace Quark {
         TouchSurface(Zep::EventBus &eventBus);
         Zep::EventBus& getEventBus();
         Touch& getTouch(int index);
-        void registerTouch(int id, Zep::Point2D position);
+        void startTouch(int id, Zep::Point2D position);
         void updateTouch(int id, Zep::Point2D position);
         void endTouch(int id, Zep::Point2D position);
         void cancelTouch(int id, Zep::Point2D position);

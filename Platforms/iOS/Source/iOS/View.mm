@@ -90,7 +90,7 @@
     for(UITouch *touch in touches) {
         int id = touchIDHelper->createID((intptr_t)touch);
         Zep::Point2D position = [self UITouchToQuarkPoint:touch];
-        QuarkTouchSurface->registerTouch(id, position);
+        QuarkTouchSurface->startTouch(id, position);
     }
 }
 

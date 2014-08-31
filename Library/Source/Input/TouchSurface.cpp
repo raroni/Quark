@@ -17,7 +17,7 @@ namespace Quark {
     
     TouchSurface::TouchSurface(Zep::EventBus &eventBus) : eventBus(eventBus) { }
     
-    void TouchSurface::registerTouch(int id, Zep::Point2D position) {
+    void TouchSurface::startTouch(int id, Zep::Point2D position) {
         auto touch = new Touch(id, position);
         
         map.insert(std::map<int, Touch*>::value_type(id, touch));
