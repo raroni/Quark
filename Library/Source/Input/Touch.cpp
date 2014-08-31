@@ -9,15 +9,7 @@
 #include "Quark/Input/Touch.h"
 
 namespace Quark {
-    Touch::Touch(int id, Zep::Point2D position) : id(id), position(position) { }
-    
-    void Touch::setStatus(Touch::Status status) {
-        this->status = status;
-    }
-    
-    Touch::Status Touch::getStatus() {
-        return status;
-    }
+    Touch::Touch(int id, Zep::Point2D position) : id(id), position(position), startPosition(position) { }
     
     void Touch::setPosition(Zep::Point2D position) {
         this->position = position;
@@ -27,7 +19,16 @@ namespace Quark {
         return position;
     }
     
+    Zep::Point2D Touch::getStartPosition() {
+        return startPosition;
+    }
+    
     int Touch::getID() {
         return id;
+    }
+    
+    float Touch::getSquaredDistance() {
+        auto difference = static_cast<Zep::Vector2>(startPosition-position);
+        return difference.getSquaredLength();
     }
 }

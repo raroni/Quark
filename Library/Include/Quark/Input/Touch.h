@@ -13,24 +13,17 @@
 
 namespace Quark {
     class Touch {
+        Zep::Point2D startPosition;
         Zep::Point2D position;
         int id;
     public:
-        enum Status {
-            Began,
-            Moved,
-            Stationary,
-            Ended,
-            Cancelled
-        };
+        bool dragging = false;
         Touch(int id, Zep::Point2D position);
-        void setStatus(Status status);
-        Status getStatus();
         void setPosition(Zep::Point2D position);
         Zep::Point2D getPosition();
+        Zep::Point2D getStartPosition();
+        float getSquaredDistance();
         int getID();
-    private:
-        Status status = Began;
     };
 }
 

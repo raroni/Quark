@@ -24,26 +24,16 @@ namespace Quark {
     class TouchSurface {
     private:
         std::map<int, Touch*> map;
-        std::vector<Touch*> touches;
-        std::vector<Touch*> justUpdatedTouches;
-        std::vector<Touch*> endedTouches;
-        std::vector<Touch*> newTouches;
         Zep::EventBus &eventBus;
-        void updateStationary();
-        void removeEnded();
+        static float squaredDragTolerance;
     public:
         TouchSurface(Zep::EventBus &eventBus);
         Zep::EventBus& getEventBus();
-        typedef std::vector<Touch*>::iterator iterator;
-        iterator begin() { return touches.begin(); };
-        iterator end() { return touches.end(); };
-        void cleanUp();
         Touch& getTouch(int index);
         void registerTouch(int id, Zep::Point2D position);
         void updateTouch(int id, Zep::Point2D position);
         void endTouch(int id, Zep::Point2D position);
         void cancelTouch(int id, Zep::Point2D position);
-        std::vector<Touch*> getNewTouches();
     };
 }
 
