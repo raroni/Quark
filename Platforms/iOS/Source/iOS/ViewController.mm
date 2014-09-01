@@ -17,6 +17,7 @@
 {
     game = aGame;
     system = aSystem;
+    lastTimestamp = 0;
     return [self init];
 }
 
@@ -33,11 +34,14 @@
     game->initialize();
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    lastTimestamp = CACurrentMediaTime();
 }
 
 - (void)tick:(CADisplayLink *)displayLink
 {
-    game->update(displayLink.duration);
+    CFTimeInterval timeDelta = displayLink.timestamp-lastTimestamp;
+    lastTimestamp = displayLink.timestamp;
+    game->update(timeDelta);
 }
 
 - (BOOL)prefersStatusBarHidden

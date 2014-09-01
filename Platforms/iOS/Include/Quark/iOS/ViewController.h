@@ -17,6 +17,7 @@ namespace Quark {
 {
     Quark::Game* game;
     Quark::System* system;
+    CFTimeInterval lastTimestamp;
 }
 - (id)initWithGame:(Quark::Game*)aGame system:(Quark::System*)aSystem;
 - (void)run;
