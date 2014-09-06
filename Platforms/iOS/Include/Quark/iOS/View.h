@@ -10,21 +10,24 @@
 #include "Quark/iOS/TouchIDHelper.h"
 
 namespace Quark {
-    class Screen;
+    class System;
     class TouchSurface;
+    class TouchIDHelper;
+    class OGLConfig;
 }
 
 @interface QuarkView : UIView
 {
-    Quark::Screen *QuarkScreen;
-    Quark::TouchSurface *QuarkTouchSurface;
+    Quark::Screen *quarkScreen;
+    Quark::TouchSurface *quarkTouchSurface;
     Quark::TouchIDHelper *touchIDHelper;
+    Quark::OGLConfig *quarkOGLConfig;
     EAGLContext *context;
-    GLuint colorRenderbufferHandle;
-    GLuint depthRenderbufferHandle;
+    GLuint primaryFramebufferHandle;
+    GLuint samplingFramebufferHandle;
+    GLuint primaryColorRenderbufferHandle;
 }
-- (id)initWithQuarkScreen:(Quark::Screen&)screen QuarkTouchSurface:(Quark::TouchSurface&)touchSurface;
-- (void)setupFrameBuffer;
+- (id)initWithQuarkSystem:(Quark::System&)system;
 - (void)present;
 - (void)dealloc;
 @end

@@ -11,6 +11,7 @@
 
 #include "Quark/Input/TouchSurface.h"
 #include "Quark/Screen.h"
+#include "Quark/Rendering/OGLConfig.h"
 #include "Zep/Events/EventBus.h"
 
 namespace Quark {
@@ -18,11 +19,13 @@ namespace Quark {
         Zep::EventBus eventBus;
         TouchSurface touchSurface;
         Screen screen;
+        OGLConfig oglConfig;
     public:
         System();
         TouchSurface& getTouchSurface();
         Screen& getScreen();
         Zep::EventBus& getEventBus();
+        OGLConfig &getOGLConfig();
     };
 }
 

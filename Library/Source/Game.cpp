@@ -11,6 +11,8 @@
 namespace Quark {
     Game::Game(System &system) : system(system) { }
     
+    void Game::configure() { }
+    
     void Game::initialize() { }
     
     Game::~Game() { }

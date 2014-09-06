@@ -22,6 +22,7 @@ namespace Quark {
     public:
         Game(System &system);
         virtual void update(float timeDelta) = 0;
+        virtual void configure();
         virtual void initialize();
         virtual ~Game();
     };

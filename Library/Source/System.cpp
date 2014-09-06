@@ -22,4 +22,8 @@ namespace Quark {
     Zep::EventBus& System::getEventBus() {
         return eventBus;
     }
+    
+    OGLConfig& System::getOGLConfig() {
+        return oglConfig;
+    }
 }
