@@ -38,7 +38,6 @@
 
 - (void)update:(CADisplayLink *)displayLink
 {
-    
     CFTimeInterval timeDelta = displayLink.timestamp-lastTimestamp;
     lastTimestamp = displayLink.timestamp;
     game->update(timeDelta);
