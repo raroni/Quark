@@ -9,9 +9,15 @@
 #include "Quark/Input/TouchStartEvent.h"
 
 namespace Quark {
-    TouchStartEvent::TouchStartEvent(int id) : id(id) { }
+    TouchStartEvent::TouchStartEvent(int id, Zep::Point2D position) :
+    id(id),
+    position(position) { }
     
     int TouchStartEvent::getID() const {
         return id;
+    }
+    
+    Zep::Point2D TouchStartEvent::getPosition() const {
+        return position;
     }
 }

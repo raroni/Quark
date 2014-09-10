@@ -22,7 +22,7 @@ namespace Quark {
         
         map.insert(std::map<int, Touch*>::value_type(id, touch));
         
-        TouchStartEvent event(id);
+        TouchStartEvent event(id, position);
         eventBus.emit(event);
     }
     

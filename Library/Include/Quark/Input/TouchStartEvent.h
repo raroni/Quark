@@ -9,14 +9,17 @@
 #ifndef __Quark__TouchStartEvent__
 #define __Quark__TouchStartEvent__
 
+#include "Zep/Geometry/Point2D.h"
 #include "Zep/Events/Event.h"
 
 namespace Quark {
     class TouchStartEvent : public Zep::Event {
         int id;
+        Zep::Point2D position;
     public:
-        TouchStartEvent(int id);
+        TouchStartEvent(int id, Zep::Point2D position);
         int getID() const;
+        Zep::Point2D getPosition() const;
     };
 }
 
