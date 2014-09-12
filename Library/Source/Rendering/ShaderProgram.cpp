@@ -28,6 +28,10 @@ namespace Quark {
         return glGetUniformLocation(handle, cName);
     }
     
+    void ShaderProgram::setUniform(GLint handle, float number) {
+        glUniform1f(handle, number);
+    }
+    
     void ShaderProgram::setUniform(GLint handle, Zep::Matrix4 matrix) {
         glUniformMatrix4fv(handle, 1, GL_FALSE, matrix.components);
     }
