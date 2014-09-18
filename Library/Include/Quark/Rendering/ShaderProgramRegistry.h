@@ -21,7 +21,7 @@ namespace Quark {
         ProgramMap programs;
     public:
         void add(std::string name, ShaderProgram program);
-        const ShaderProgram& get(std::string name);
+        ShaderProgram& get(std::string name);
     };
 }
 
