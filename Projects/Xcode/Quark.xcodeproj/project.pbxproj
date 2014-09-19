@@ -11,6 +11,7 @@
 		3A7B84B4196465D0003ED243 /* ShaderProgramRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */; };
 		3A7B84B7196465D6003ED243 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */; };
 		3A7B84BA196465ED003ED243 /* ShaderProgramSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */; };
+		3A8567C819CC55FB0051B748 /* DragStartEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A8567C619CC55FB0051B748 /* DragStartEvent.cpp */; };
 		3A8C8C6F1963F88C005C664A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C8C6E1963F88C005C664A /* Foundation.framework */; };
 		3AB208E819642CA2004C625F /* Screen.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AB208E619642CA2004C625F /* Screen.mm */; };
 		3AC7CF641963FBAE00A3A961 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CF5B1963FB9300A3A961 /* Game.cpp */; };
@@ -46,6 +47,8 @@
 		3A7B84B2196465D0003ED243 /* ShaderProgramRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgramRegistry.cpp; sourceTree = "<group>"; };
 		3A7B84B5196465D6003ED243 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		3A7B84B8196465ED003ED243 /* ShaderProgramSetup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgramSetup.cpp; sourceTree = "<group>"; };
+		3A8567C619CC55FB0051B748 /* DragStartEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DragStartEvent.cpp; sourceTree = "<group>"; };
+		3A8567C719CC55FB0051B748 /* DragStartEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragStartEvent.h; sourceTree = "<group>"; };
 		3A8C8C6B1963F88C005C664A /* libQuark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuark.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8C8C6E1963F88C005C664A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A937BFA19B34822002B50B3 /* CommonScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonScreen.h; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 				3A937BFE19B34822002B50B3 /* Touch.h */,
 				3A937BFF19B34822002B50B3 /* TouchEndEvent.h */,
 				3A937C0019B34822002B50B3 /* TouchStartEvent.h */,
+				3A8567C719CC55FB0051B748 /* DragStartEvent.h */,
 				3A937C0119B34822002B50B3 /* TouchSurface.h */,
 			);
 			path = Input;
@@ -201,6 +205,7 @@
 				3AC7CF5E1963FB9300A3A961 /* TouchSurface.cpp */,
 				3AD6498C19B31CFF00803505 /* TouchStartEvent.cpp */,
 				3AD6498F19B31D0700803505 /* TouchEndEvent.cpp */,
+				3A8567C619CC55FB0051B748 /* DragStartEvent.cpp */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				3AB208E819642CA2004C625F /* Screen.mm in Sources */,
 				3AD6498E19B31CFF00803505 /* TouchStartEvent.cpp in Sources */,
 				3AC7CF771963FC5700A3A961 /* TouchIDHelper.cpp in Sources */,
+				3A8567C819CC55FB0051B748 /* DragStartEvent.cpp in Sources */,
 				3AD4F46F196574C4009C80FF /* ProjectionFactory.cpp in Sources */,
 				3AC7CF791963FC5900A3A961 /* ViewController.mm in Sources */,
 				3AD6499119B31D0700803505 /* TouchEndEvent.cpp in Sources */,

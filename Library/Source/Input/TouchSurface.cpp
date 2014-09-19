@@ -9,6 +9,7 @@
 #include "Zep/Events/EventBus.h"
 #include "Quark/Input/Touch.h"
 #include "Quark/Input/TouchStartEvent.h"
+#include "Quark/Input/DragStartEvent.h"
 #include "Quark/Input/TouchEndEvent.h"
 #include "Quark/Input/TouchSurface.h"
 
@@ -38,6 +39,9 @@ namespace Quark {
             auto squaredDistance = touch->getSquaredDistance();
             if(squaredDistance > squaredDragTolerance) {
                 touch->dragging = true;
+
+                DragStartEvent event(id);
+                eventBus.emit(event);
             }
         }
     }
