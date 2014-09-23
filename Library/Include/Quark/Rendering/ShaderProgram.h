@@ -15,6 +15,7 @@
 namespace Zep {
     class Matrix4;
     class Vector3;
+    class Vector2;
     class Matrix3;
 }
 
@@ -29,6 +30,7 @@ namespace Quark {
         static void setUniform(GLint uniformHandle, Zep::Matrix4 matrix);
         static void setUniform(GLint uniformHandle, Zep::Matrix3 matrix);
         static void setUniform(GLint uniformHandle, Zep::Vector3 vector);
+        static void setUniform(GLint uniformHandle, Zep::Vector2 vector);
         static void setUniform(GLint uniformHandle, float number);
     };
 }
