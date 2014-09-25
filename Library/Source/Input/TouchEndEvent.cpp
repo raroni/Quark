@@ -9,9 +9,15 @@
 #include "Quark/Input/TouchEndEvent.h"
 
 namespace Quark {
-    TouchEndEvent::TouchEndEvent(int id) : id(id) { }
+    TouchEndEvent::TouchEndEvent(int id, Zep::Point2D position) :
+    id(id),
+    position(position) { }
     
     int TouchEndEvent::getID() const {
         return id;
+    }
+
+    Zep::Point2D TouchEndEvent::getPosition() const {
+        return position;
     }
 }

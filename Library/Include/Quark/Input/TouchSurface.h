@@ -10,7 +10,6 @@
 #define __Quark__TouchSurface__
 
 #include <map>
-#include <vector>
 
 namespace Zep {
     class Point2D;
@@ -29,7 +28,7 @@ namespace Quark {
     public:
         TouchSurface(Zep::EventBus &eventBus);
         Zep::EventBus& getEventBus();
-        Touch& getTouch(int index);
+        Touch& getTouch(int id);
         void startTouch(int id, Zep::Point2D position);
         void updateTouch(int id, Zep::Point2D position);
         void endTouch(int id, Zep::Point2D position);

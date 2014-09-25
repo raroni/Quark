@@ -14,7 +14,7 @@
 #include "Quark/Input/TouchSurface.h"
 
 namespace Quark {
-    float TouchSurface::squaredDragTolerance = std::pow(0.02, 2);
+    float TouchSurface::squaredDragTolerance = std::pow(0.1, 2);
     
     TouchSurface::TouchSurface(Zep::EventBus &eventBus) : eventBus(eventBus) { }
     
@@ -34,7 +34,7 @@ namespace Quark {
     void TouchSurface::updateTouch(int id, Zep::Point2D position) {
         Touch *touch = map.find(id)->second;
         touch->setPosition(position);
-        
+
         if(!touch->dragging) {
             auto squaredDistance = touch->getSquaredDistance();
             if(squaredDistance > squaredDragTolerance) {
@@ -50,9 +50,9 @@ namespace Quark {
         auto touch = map.find(id)->second;
         touch->setPosition(position);
         
-        TouchEndEvent event(id);
+        TouchEndEvent event(id, position);
         eventBus.emit(event);
-        
+
         delete touch;
         map.erase(id);
     }
@@ -61,11 +61,14 @@ namespace Quark {
         Touch* touch = map.find(id)->second;
         touch->setPosition(position);
         
-        TouchEndEvent event(id);
+        TouchEndEvent event(id, position);
         eventBus.emit(event);
+
+        delete touch;
+        map.erase(id);
     }
     
-    Touch& TouchSurface::getTouch(int index) {
-        return *map[index];
+    Touch& TouchSurface::getTouch(int id) {
+        return *map[id];
     }
 }
