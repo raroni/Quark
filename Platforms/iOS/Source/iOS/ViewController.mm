@@ -15,6 +15,7 @@
 
 - (id)initWithGame:(Quark::Game*)aGame system:(Quark::System*)aSystem
 {
+    started = false;
     game = aGame;
     system = aSystem;
     lastTimestamp = 0;
@@ -28,12 +29,19 @@
     system->getScreen().setView((__bridge void*)self.view);
 }
 
-- (void)run
+- (void)start
 {
     game->initialize();
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     lastTimestamp = CACurrentMediaTime();
+    started = true;
+}
+
+- (void)viewDidLayoutSubviews {
+    if(!started) {
+        [self start];
+    }
 }
 
 - (void)update:(CADisplayLink *)displayLink

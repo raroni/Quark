@@ -24,8 +24,12 @@ namespace Quark {
     Quark::OGLConfig *quarkOGLConfig;
     EAGLContext *context;
     GLuint primaryFramebufferHandle;
-    GLuint samplingFramebufferHandle;
     GLuint primaryColorRenderbufferHandle;
+    GLuint primaryDepthRenderbufferHandle;
+    GLuint samplingFramebufferHandle;
+    GLuint samplingColorRenderbufferHandle;
+    GLuint samplingDepthRenderbufferHandle;
+    bool buffersCreated;
 }
 - (id)initWithQuarkSystem:(Quark::System&)system;
 - (void)present;

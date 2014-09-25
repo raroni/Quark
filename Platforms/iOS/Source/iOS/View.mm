@@ -18,8 +18,6 @@
 @interface QuarkView()
 - (int)pointsToPixels:(float)points;
 - (Zep::Point2D)UITouchToQuarkPoint:(UITouch*)touch;
-- (void)setupSamplingFramebuffer;
-- (void)setupPrimaryFramebuffer;
 @end
 
 @implementation QuarkView
@@ -29,6 +27,8 @@
     self = [self initWithFrame:[UIScreen mainScreen].bounds];
     
     if(self) {
+        buffersCreated = false;
+
         touchIDHelper = new Quark::TouchIDHelper();
         quarkScreen = &system.getScreen();
         quarkTouchSurface = &system.getTouchSurface();
@@ -56,32 +56,30 @@
     [EAGLContext setCurrentContext:context];
 }
 
-- (void)setupSamplingFramebuffer
+- (void)createSamplingFramebuffer
 {
     glGenFramebuffers(1, &samplingFramebufferHandle);
     glBindFramebuffer(GL_FRAMEBUFFER, samplingFramebufferHandle);
     
     int width = [self widthsInPixels];
     int height = [self heightInPixels];
-    
-    GLuint samplingColorRenderbuffer;
-    glGenRenderbuffers(1, &samplingColorRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, samplingColorRenderbuffer);
+
+    glGenRenderbuffers(1, &samplingColorRenderbufferHandle);
+    glBindRenderbuffer(GL_RENDERBUFFER, samplingColorRenderbufferHandle);
     glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_RGBA8_OES, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, samplingColorRenderbuffer);
-    
-    GLuint samplingDepthRenderbuffer;
-    glGenRenderbuffers(1, &samplingDepthRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, samplingDepthRenderbuffer);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, samplingColorRenderbufferHandle);
+
+    glGenRenderbuffers(1, &samplingDepthRenderbufferHandle);
+    glBindRenderbuffer(GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
     glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_DEPTH_COMPONENT16, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, samplingDepthRenderbuffer);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
     
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
     }
 }
 
-- (void)setupPrimaryFramebuffer
+- (void)createPrimaryFramebuffer
 {
     glGenFramebuffers(1, &primaryFramebufferHandle);
     glBindFramebuffer(GL_FRAMEBUFFER, primaryFramebufferHandle);
@@ -93,23 +91,42 @@
     
     int width = [self widthsInPixels];
     int height = [self heightInPixels];
-    GLuint depthRenderbufferHandle;
-    glGenRenderbuffers(1, &depthRenderbufferHandle);
-    glBindRenderbuffer(GL_RENDERBUFFER, depthRenderbufferHandle);
+    glGenRenderbuffers(1, &primaryDepthRenderbufferHandle);
+    glBindRenderbuffer(GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthRenderbufferHandle);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
     
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
     }
 }
 
+- (void)deleteBuffers {
+    glDeleteFramebuffers(1, &primaryFramebufferHandle);
+    glDeleteRenderbuffers(1, &primaryColorRenderbufferHandle);
+    glDeleteRenderbuffers(1, &primaryDepthRenderbufferHandle);
+
+    if(quarkOGLConfig->isMultisamplingEnabled()) {
+        glDeleteFramebuffers(1, &samplingFramebufferHandle);
+        glDeleteRenderbuffers(1, &samplingColorRenderbufferHandle);
+        glDeleteRenderbuffers(1, &samplingDepthRenderbufferHandle);
+    }
+    glDeleteFramebuffers(1, &primaryFramebufferHandle);
+}
+
+- (void)createBuffers
+{
+    [self createPrimaryFramebuffer];
+    if(quarkOGLConfig->isMultisamplingEnabled()) {
+        [self createSamplingFramebuffer];
+    }
+    buffersCreated = true;
+}
+
 - (void)layoutSubviews
 {
-    [self setupPrimaryFramebuffer];
-    if(quarkOGLConfig->isMultisamplingEnabled()) {
-        [self setupSamplingFramebuffer];
-    }
+    if(buffersCreated) [self deleteBuffers];
+    [self createBuffers];
     
     int width = [self widthsInPixels];
     int height = [self heightInPixels];
