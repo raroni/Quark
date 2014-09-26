@@ -16,4 +16,12 @@ namespace Quark {
     bool OGLConfig::isMultisamplingEnabled() {
         return multisampling;
     }
+
+    bool OGLConfig::isDepthBufferEnabled() {
+        return depthBuffer;
+    }
+
+    void OGLConfig::enableDepthBuffer() {
+        depthBuffer = true;
+    }
 }

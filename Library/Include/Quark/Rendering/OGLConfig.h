@@ -12,9 +12,12 @@
 namespace Quark {
     class OGLConfig {
         bool multisampling = false;
+        bool depthBuffer = false;
     public:
         void enableMultisampling();
         bool isMultisamplingEnabled();
+        void enableDepthBuffer();
+        bool isDepthBufferEnabled();
     };
 }
 

@@ -69,10 +69,12 @@
     glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_RGBA8_OES, width, height);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, samplingColorRenderbufferHandle);
 
-    glGenRenderbuffers(1, &samplingDepthRenderbufferHandle);
-    glBindRenderbuffer(GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
-    glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_DEPTH_COMPONENT16, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
+    if(quarkOGLConfig->isDepthBufferEnabled()) {
+        glGenRenderbuffers(1, &samplingDepthRenderbufferHandle);
+        glBindRenderbuffer(GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
+        glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, 4, GL_DEPTH_COMPONENT16, width, height);
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, samplingDepthRenderbufferHandle);
+    }
     
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
@@ -88,13 +90,15 @@
     glBindRenderbuffer(GL_RENDERBUFFER, primaryColorRenderbufferHandle);
     [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer*)self.layer];
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, primaryColorRenderbufferHandle);
-    
-    int width = [self widthsInPixels];
-    int height = [self heightInPixels];
-    glGenRenderbuffers(1, &primaryDepthRenderbufferHandle);
-    glBindRenderbuffer(GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
+
+    if(quarkOGLConfig->isDepthBufferEnabled()) {
+        int width = [self widthsInPixels];
+        int height = [self heightInPixels];
+        glGenRenderbuffers(1, &primaryDepthRenderbufferHandle);
+        glBindRenderbuffer(GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, primaryDepthRenderbufferHandle);
+    }
     
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
         NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
@@ -104,12 +108,16 @@
 - (void)deleteBuffers {
     glDeleteFramebuffers(1, &primaryFramebufferHandle);
     glDeleteRenderbuffers(1, &primaryColorRenderbufferHandle);
-    glDeleteRenderbuffers(1, &primaryDepthRenderbufferHandle);
+    if(quarkOGLConfig->isDepthBufferEnabled()) {
+        glDeleteRenderbuffers(1, &primaryDepthRenderbufferHandle);
+    }
 
     if(quarkOGLConfig->isMultisamplingEnabled()) {
         glDeleteFramebuffers(1, &samplingFramebufferHandle);
         glDeleteRenderbuffers(1, &samplingColorRenderbufferHandle);
-        glDeleteRenderbuffers(1, &samplingDepthRenderbufferHandle);
+        if(quarkOGLConfig->isDepthBufferEnabled()) {
+            glDeleteRenderbuffers(1, &samplingDepthRenderbufferHandle);
+        }
     }
     glDeleteFramebuffers(1, &primaryFramebufferHandle);
 }
