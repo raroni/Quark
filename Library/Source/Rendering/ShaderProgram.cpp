@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Tickleworks. All rights reserved.
 //
 
-#include "Zep/Math/Matrix4.h"
-#include "Zep/Math/Vector3.h"
 #include "Zep/Math/Vector2.h"
+#include "Zep/Math/Vector3.h"
+#include "Zep/Math/Vector4.h"
 #include "Zep/Math/Matrix3.h"
-#include "ShaderProgram.h"
+#include "Zep/Math/Matrix4.h"
+#include "Quark/Rendering/ShaderProgram.h"
 
 namespace Quark {
     ShaderProgram::ShaderProgram(GLuint handle) : handle(handle) { }
@@ -32,20 +33,24 @@ namespace Quark {
     void ShaderProgram::setUniform(GLint handle, float number) {
         glUniform1f(handle, number);
     }
-    
-    void ShaderProgram::setUniform(GLint handle, Zep::Matrix4 matrix) {
-        glUniformMatrix4fv(handle, 1, GL_FALSE, matrix.components);
-    }
-    
-    void ShaderProgram::setUniform(GLint handle, Zep::Matrix3 matrix) {
-        glUniformMatrix3fv(handle, 1, GL_FALSE, matrix.components);
-    }
-    
+
     void ShaderProgram::setUniform(GLint handle, Zep::Vector3 vector) {
         glUniform3fv(handle, 1, vector.components);
     }
 
     void ShaderProgram::setUniform(GLint handle, Zep::Vector2 vector) {
         glUniform2fv(handle, 1, vector.components);
+    }
+
+    void ShaderProgram::setUniform(GLint handle, Zep::Vector4 vector) {
+        glUniform4fv(handle, 1, vector.components);
+    }
+    
+    void ShaderProgram::setUniform(GLint handle, Zep::Matrix3 matrix) {
+        glUniformMatrix3fv(handle, 1, GL_FALSE, matrix.components);
+    }
+
+    void ShaderProgram::setUniform(GLint handle, Zep::Matrix4 matrix) {
+        glUniformMatrix4fv(handle, 1, GL_FALSE, matrix.components);
     }
 }

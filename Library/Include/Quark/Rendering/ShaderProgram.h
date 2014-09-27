@@ -13,10 +13,11 @@
 #include "Quark/Rendering/OpenGL.h"
 
 namespace Zep {
-    class Matrix4;
-    class Vector3;
     class Vector2;
+    class Vector3;
+    class Vector4;
     class Matrix3;
+    class Matrix4;
 }
 
 namespace Quark {
@@ -27,11 +28,12 @@ namespace Quark {
         void use() const;
         GLint getAttributeHandle(std::string name) const;
         GLint getUniformHandle(std::string name) const;
-        static void setUniform(GLint uniformHandle, Zep::Matrix4 matrix);
-        static void setUniform(GLint uniformHandle, Zep::Matrix3 matrix);
-        static void setUniform(GLint uniformHandle, Zep::Vector3 vector);
-        static void setUniform(GLint uniformHandle, Zep::Vector2 vector);
         static void setUniform(GLint uniformHandle, float number);
+        static void setUniform(GLint uniformHandle, Zep::Vector2 vector);
+        static void setUniform(GLint uniformHandle, Zep::Vector3 vector);
+        static void setUniform(GLint uniformHandle, Zep::Vector4 vector);
+        static void setUniform(GLint uniformHandle, Zep::Matrix3 matrix);
+        static void setUniform(GLint uniformHandle, Zep::Matrix4 matrix);
     };
 }
 
